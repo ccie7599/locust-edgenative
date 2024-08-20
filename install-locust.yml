@@ -1,0 +1,30 @@
+---
+- name: Install Locust on Ubuntu 22.04
+  hosts: all
+  become: no
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install required system packages
+      apt:
+        name: 
+          - python3
+          - python3-pip
+          - build-essential
+          - python3-dev
+        state: present
+
+    - name: Install Locust using pip
+      command: pip install locust --break-system-packages
+
+    - name: Verify Locust installation
+      command: locust --version
+      register: locust_version
+      ignore_errors: yes
+
+    - name: Display Locust version
+      debug:
+        msg: "Locust version installed: {{ locust_version.stdout }}"
+

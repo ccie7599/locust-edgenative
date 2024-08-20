@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Start Locust in worker mode
+      command: locust -f edgenative.py --worker --master-host=172.104.206.126
+      async: 100000000 
+      poll: 0

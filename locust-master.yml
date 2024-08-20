@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Start Locust in master mode
+      command: locust -f edgenative.py --master
+      async: 100000000 
+      poll: 0

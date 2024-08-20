@@ -1,0 +1,14 @@
+- name: Copy Python files to remote hosts
+  hosts: all  # Specify your target hosts here (e.g., locust_workers, locust_masters)
+  become: yes
+  tasks:
+    - name: Copy Python files to /root/ directory on remote hosts
+      copy:
+        src: "{{ item }}"
+        dest: /root/
+        owner: root
+        mode: '0755'
+      with_fileglob:
+        - "*.py"  # This will pick up all .py files in the directory where the playbook is executed
+      ignore_errors: true
+

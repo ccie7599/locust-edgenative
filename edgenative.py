@@ -11,7 +11,7 @@ class UserBehavior(TaskSet):
     def get_price_legacy(self):
         self.client.headers.update({"User-Agent": "legacy"})
         # Testing the endpoint every second
-        self.client.get("/get?topic=price&origin=legacy")
+        self.client.get("/getlegacy?topic=price&origin=legacy")
 class WebsiteUser(HttpUser):
     tasks = [UserBehavior]
     # Sets the time between requests; here it's 1 second

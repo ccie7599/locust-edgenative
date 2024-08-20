@@ -5,6 +5,6 @@
 
   tasks:
     - name: Start Locust in master mode
-      command: locust -f edgenative.py --master -c 50 -r 10
+      command: locust -f edgenative.py --master 
       async: 100000000 
       poll: 0

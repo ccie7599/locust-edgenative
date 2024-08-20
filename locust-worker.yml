@@ -4,7 +4,12 @@
   become: yes
 
   tasks:
+    - name: Read master IP address from file
+      set_fact:
+        master_ip: "{{ lookup('file', 'master.inv') | trim }}"
+
     - name: Start Locust in worker mode
-      command: locust -f edgenative.py --worker --master-host={master}
-      async: 100000000 
+      command: locust -f edgenative.py --worker --master-host={{ master_ip }}
+      async: 100000000
       poll: 0
+

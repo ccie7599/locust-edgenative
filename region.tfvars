@@ -1,1 +1,0 @@
-regions = ["ap-west","ca-central","ap-southeast","us-iad","us-ord","fr-par","us-sea","br-gru","nl-ams","se-sto","es-mad","in-maa","jp-osa","it-mil","us-mia","id-cgk","us-lax","de-ham-edge-1","za-jnb-edge-1","my-kul-edge-1","mx-qro-edge-1","cl-scl-edge-1","gb-lon","au-mel","us-central","us-west","us-southeast","us-east","eu-west","ap-south","eu-central","ap-northeast"]

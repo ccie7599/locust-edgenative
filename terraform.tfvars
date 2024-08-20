@@ -1,2 +1,1 @@
-regions       = ["us-southeast", "fr-par", "in-maa", "jp-osa"]
-
+regions = ["ap-west","ca-central","ap-southeast","us-iad","us-ord","fr-par","us-sea","br-gru","nl-ams","se-sto","es-mad","in-maa","jp-osa","it-mil","us-mia","id-cgk","us-lax","gb-lon","au-mel","us-central","us-west","us-southeast","us-east","eu-west","ap-south","eu-central","ap-northeast"]

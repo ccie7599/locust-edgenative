@@ -19,7 +19,7 @@ variable "linode_token" {
 variable "ssh_public_key" {
   description = "Path to the SSH public key file"
   type        = string
-  default     = "/root/.ssh/id_rsa.pub"
+  default     = "/Users/bapley/.ssh/id_rsa.pub"
 }
 
 variable "regions" {
@@ -43,7 +43,7 @@ locals {
 
 resource "linode_instance" "linode" {
   count       = length(var.regions)
-  label       = "workshop-${element(var.regions, count.index)}-${local.timestamp}"
+  label       = "locust-${element(var.regions, count.index)}-${local.timestamp}"
   region      = element(var.regions, count.index)
   type        = "g6-standard-1"
   image       = "linode/ubuntu24.04"
